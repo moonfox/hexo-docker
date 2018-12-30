@@ -8,5 +8,5 @@ WORKDIR /usr/src/app
 # EXPOSE 4000
 # CMD npm start
 
-RUN npm install -g hexo-cli
+RUN npm install -g hexo-cli@3.8.0
 CMD /bin/sh
