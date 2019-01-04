@@ -1,5 +1,5 @@
 FROM node:11.6.0-alpine
-ENV NODE_ENV production
+# ENV NODE_ENV production
 WORKDIR /usr/src/app
 
 # COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
@@ -8,5 +8,10 @@ WORKDIR /usr/src/app
 # EXPOSE 4000
 # CMD npm start
 
-RUN npm install -g hexo-cli
+RUN set -ex \
+    \
+    && npm install -g npm \
+    && npm install -g hexo-cli \
+    && apk add --no-cach git
+
 CMD /bin/sh
